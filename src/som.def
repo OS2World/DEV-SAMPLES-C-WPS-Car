@@ -1,0 +1,10 @@
+IMPORTS
+SOMClassClassData = SOM.3
+SOMClassMgrClassData = SOM.6
+SOMClassMgrObject = SOM.7
+SOM_TraceLevel = SOM.18
+SOMFree = SOM.10
+somBuildClass = SOM.49
+somIdFromString = SOM.31
+somParentNumResolve = SOM.50
+somPrintf = SOM.35

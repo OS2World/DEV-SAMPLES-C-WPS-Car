@@ -1,0 +1,90 @@
+Open Watcom Make Version 2.0.1
+Portions Copyright (c) 1988-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+	wcc386 -bd -bt=os2 -zq -wx -wcd=1177 -d1 -Ih -IC:\os2tk45\som\include -IC:\os2tk45\h src\car.c -fo=release\car.obj
+	copy src\cgenpre.h + h\car.c release\cargen.c >nul
+	wcc386 -bd -bt=os2 -zq -wx -wcd=1177 -d1 -Ih -IC:\os2tk45\som\include -IC:\os2tk45\h -wcd=107 -wcd=138 -wcd=202 release\cargen.c -fo=release\cargen.obj
+	wrc -r -i=src -i=C:\os2tk45\h src\car.rc
+Open Watcom Windows and OS/2 Resource Compiler Version 2.0.1
+Portions Copyright (c) 1993-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+	copy src\car.res release
+        1 file(s) copied.
+	del src\car.res
+	implib release\som.lib C:\OS2\DLL\som.dll
+
+Operating System/2 Import Library Manager
+Version 4.00.001 Oct 04 2001
+Copyright (C) IBM Corporation 1988-2001.
+Copyright (C) Microsoft Corp. 1988-1992.
+All rights reserved.
+
+	implib release\pmwp.lib src\pmwp.def
+
+Operating System/2 Import Library Manager
+Version 4.00.001 Oct 04 2001
+Copyright (C) IBM Corporation 1988-2001.
+Copyright (C) Microsoft Corp. 1988-1992.
+All rights reserved.
+
+	wlink SYSTEM OS2V2_DLL NAME release\car.dll OP MAP=release\car.map LIBF release\som.lib,release\pmwp.lib EXP SOMInitModule EXP M_CarClassData EXP M_CarCClassData EXP M_CarNewClass EXP CarClassData EXP CarCClassData EXP CarNewClass FIL release\car.obj,release\cargen.obj
+** EXPERIMENTAL (HLL) ** Open Watcom Linker Version 2.0.1
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+loading object files
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of CarClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of CarCClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of M_CarClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of M_CarCClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of CarNewClass ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of M_CarNewClass ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryBrakes ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetBrakes ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryDuration ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetDuration ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryHighTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetHighTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryLowTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetLowTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QuerySpeed ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetSpeed ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_BeepHorn ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_AddDashboardPage ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_AddHornBeepPage ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_TrapTest ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpUnInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpSaveState ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpRestoreState ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpAddSettingsPages ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpFilterPopupMenu ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpModifyPopupMenu ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpMenuItemSelected ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpMenuItemHelpSelected ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpQueryDetailsData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpOpen ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpSetup ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_clsQueryModuleHandle ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsUnInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryTitle ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryIconData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDefaultHelp ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDefaultView ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDetailsInfo ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDetails ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryInstanceFilter ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryStyle ignored
+searching libraries
+creating map file
+creating an OS/2 32-bit dynamic link library
+	wrc release\car.res release\car.dll
+Open Watcom Windows and OS/2 Resource Compiler Version 2.0.1
+Portions Copyright (c) 1993-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+	copy orig\car.hlp release\car.hlp
+        1 file(s) copied.

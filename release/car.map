@@ -1,0 +1,569 @@
+** EXPERIMENTAL (HLL) ** Open Watcom Linker Version 2.0.1
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       26/08/26 19:18:45
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of CarClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of CarCClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of M_CarClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of M_CarCClassData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of CarNewClass ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of M_CarNewClass ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryBrakes ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetBrakes ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryDuration ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetDuration ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryHighTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetHighTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QueryLowTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetLowTone ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_QuerySpeed ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_SetSpeed ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_BeepHorn ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_AddDashboardPage ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_AddHornBeepPage ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_TrapTest ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpUnInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpSaveState ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpRestoreState ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpAddSettingsPages ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpFilterPopupMenu ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpModifyPopupMenu ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpMenuItemSelected ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpMenuItemHelpSelected ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpQueryDetailsData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpOpen ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of car_wpSetup ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_clsQueryModuleHandle ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsUnInitData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryTitle ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryIconData ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDefaultHelp ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDefaultView ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDetailsInfo ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryDetails ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryInstanceFilter ignored
+Warning! W1027: file release\cargen.obj(D:\SWtest\Car-Watcom\release\cargen.c): redefinition of carM_wpclsQueryStyle ignored
+Executable Image: release\car.dll
+creating an OS/2 32-bit dynamic link library
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          0002:00000000        00002b60
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE           AUTO           0001:00000000   00000007
+_TEXT                  CODE           AUTO           0001:00000010   00005463
+_NULL                  BEGDATA        DGROUP         0002:00000000   00000004
+_AFTERNULL             BEGDATA        DGROUP         0002:00000004   00000000
+CONST                  DATA           DGROUP         0002:00000004   00001380
+CONST2                 DATA           DGROUP         0002:00001384   00000000
+_DATA                  DATA           DGROUP         0002:00001384   00000d00
+XIB                    DATA           DGROUP         0002:00002084   00000000
+XI                     DATA           DGROUP         0002:00002084   0000000c
+XIE                    DATA           DGROUP         0002:00002090   00000000
+YIB                    DATA           DGROUP         0002:00002090   00000000
+YI                     DATA           DGROUP         0002:00002090   00000006
+YIE                    DATA           DGROUP         0002:00002096   00000000
+TIB                    DATA           DGROUP         0002:00002096   00000000
+TI                     DATA           DGROUP         0002:00002096   00000000
+TIE                    DATA           DGROUP         0002:00002096   00000000
+DATA                   DATA           DGROUP         0002:00002096   00000000
+_BSS                   BSS            DGROUP         0002:00002098   00000ac0
+STACK                  STACK          DGROUP         0002:00002b60   00000000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: release\car.obj(D:\SWtest\Car-Watcom\src\car.c)
+0002:00002098+ _jmpState
+0002:000020cc+ _fieldinfo
+0002:000013e4  CarClassData
+0002:00001420  CarCClassData
+0002:000017bc  M_CarClassData
+0002:000017c4  M_CarCClassData
+0001:00000010  CarNewClass
+0001:000001db  M_CarNewClass
+0001:00000360  SOMInitModule
+0001:00000391  car_QueryBrakes
+0001:000003da  car_SetBrakes
+0001:00000427  car_QueryDuration
+0001:00000471  car_SetDuration
+0001:000004bf  car_QueryHighTone
+0001:00000509  car_SetHighTone
+0001:00000557  car_QueryLowTone
+0001:000005a1  car_SetLowTone
+0001:000005ef  car_QuerySpeed
+0001:00000639  car_SetSpeed
+0001:00000687  car_BeepHorn
+0001:00000717  car_AddDashboardPage
+0001:000007ff  car_AddHornBeepPage
+0001:000008c8  car_wpInitData
+0001:0000094f  car_wpUnInitData
+0001:000009a0  car_wpSaveState
+0001:00000a5f  car_wpRestoreState
+0001:00000b1d  car_wpAddSettingsPages
+0001:00000bc1  car_wpFilterPopupMenu
+0001:00000c2a  car_wpModifyPopupMenu
+0001:00000cde  car_wpMenuItemSelected
+0001:00000d7f  car_wpMenuItemHelpSelected
+0001:00000dea  car_wpQueryDetailsData
+0001:00000e82  car_wpOpen
+0001:00000f0a  car_wpSetup
+0001:00001045  car_TrapTest
+0001:000010eb  carM_clsQueryModuleHandle
+0001:0000118e  carM_wpclsQueryStyle
+0001:000011e8  carM_wpclsInitData
+0001:00001337  carM_wpclsUnInitData
+0001:0000137a  carM_wpclsQueryTitle
+0001:000013cc  carM_wpclsQueryIconData
+0001:0000142f  carM_wpclsQueryDefaultHelp
+0001:0000148b  carM_wpclsQueryDefaultView
+0001:000014c5  carM_wpclsQueryDetailsInfo
+0001:00001551  carM_wpclsQueryInstanceFilter
+0001:0000158b  carM_wpclsQueryDetails
+0001:000015ce+ CarInit_
+0001:000017d1+ CarWndProc
+0001:00001a95+ DashBoardDlgProc
+0001:00001f90+ HornBeepDlgProc
+0001:00002283* _Exception
+0002:000018f4+ _szCarWindowClass
+0002:000018fe+ _szCarInstanceFilter
+0002:00001904+ _szHelpLibrary
+0002:0000190c+ _szCarClassTitle
+0002:00001a10+ _hmod
+0002:00001a14+ _pszDefaultText
+0002:00001a18+ _pszTrapMessage
+0002:00001a1c+ _apszCarColTitles
+Module: C:\WATCOM/lib386/os2\clib3r.lib(stk)
+0001:000030dd* __STK
+0001:000030cd  __CHK
+0001:0000310c* __GRO
+0001:000030fc* __STKOVERFLOW_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(memset.c)
+0001:00003130  memset_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(_iltoa__.asm)
+0001:00003148  _ltoa_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(strlen.c)
+0001:00003150  strlen_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(memcpy.c)
+0001:00003170  memcpy_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(setjmp)
+0001:00003190  _setjmp_
+0001:000031c9  longjmp_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(strcpy.c)
+0001:00003240  strcpy_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(_iitoa__.asm)
+0001:00003264  _itoa_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(dstrt386)
+0001:0000326a  __DLLstart_
+0001:0000326a* __DLLstartw_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(xmsgo32.c)
+0001:000032d0+ __exit_with_msg_
+0001:00003320  __fatal_runtime_error_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(maino32.c)
+0002:00001fb0  ___FirstThreadData
+0002:00001fb4  ___GetThreadPtr
+0002:00001fb8  __AccessFileH
+0002:00001fbc  __ReleaseFileH
+0002:00001fc0  __AccessIOB
+0002:00001fc4  __ReleaseIOB
+0002:00001fc8  __AccessNHeap
+0002:00001fcc  __AccessFHeap
+0002:00001fd0  __ReleaseNHeap
+0002:00001fd4  __ReleaseFHeap
+0001:00003346  __threadstack_
+0001:0000334d  __threadid_
+0001:00003354* __OS2MainInit_
+0001:000033c3  __OS2Init_
+0001:00003401  __OS2Fini_
+0001:00003409  __shutdown_stack_checking_
+0001:0000341e  __exit_
+0002:00001fd8  __AccessTDList
+0002:00001fdc  __ReleaseTDList
+0002:00001fe0  ___sig_init_rtn
+0002:00001fe4  ___sig_fini_rtn
+0002:00001fe8  __threadstksize
+0002:00001fec+ ___process_fini
+0002:00002320  ___Is_DLL
+0002:00002324+ ___saved_CS
+Module: C:\WATCOM/lib386/os2\clib3r.lib(__stos)
+0001:00003470  __STOSB
+0001:000034a7* __STOSD
+Module: C:\WATCOM/lib386/os2\clib3r.lib(ltoa.c)
+0001:00003520+ ultoa_
+0001:00003570  ltoa_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(ljmphdl.c)
+0002:00001ff0  ___longjmp_handler
+Module: C:\WATCOM/lib386/os2\clib3r.lib(itoa.c)
+0001:000035b0+ utoa_
+0001:00003600  itoa_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(dmaino32.c)
+0001:00003624  __LibMain
+Module: C:\WATCOM/lib386/os2\clib3r.lib(segdefns)
+0001:00000003  ___begtext
+0002:00000000* __nullarea
+0002:00002084  __Start_XI
+0002:00002090  __End_XI
+0002:00002090  __Start_YI
+0002:00002096  __End_YI
+Module: C:\WATCOM/lib386/os2\clib3r.lib(enterdb.c)
+0001:00003840  __EnterWVIDEO_
+0002:00001ff4+ ___WD_Present
+Module: C:\WATCOM/lib386/os2\clib3r.lib(crwdata)
+0002:0000203a  __osmajor
+0002:0000203b  __osminor
+0002:00002008  __LpDllName
+0002:0000200c  __LpwCmdLine
+0002:00002010  __LpwPgmName
+0002:00002014  __LpwDllName
+0002:00002000  __LpCmdLine
+0002:00002004  __LpPgmName
+0002:00001ff8* __dynend
+0002:00001ffc  __curbrk
+0002:00002018* __STACKLOW
+0002:0000201c* __STACKTOP
+0002:00002020  __ASTACKSIZ
+0002:00002024  __ASTACKPTR
+0002:00002028* __cbyte
+0002:0000202c* __cbyte2
+0002:00002030* __child
+0002:00002036  __Envptr
+0002:00002034  __no87
+0002:0000203c* ___FPE_handler
+Module: C:\WATCOM/lib386/os2\clib3r.lib(cinit.c)
+0001:00003870  __CommonInit_
+0002:00002738  ___hmodule
+Module: C:\WATCOM/lib386/os2\clib3r.lib(initrtns.c)
+0001:00003890  __InitRtns
+0001:000038e0  __FiniRtns
+Module: C:\WATCOM/lib386/os2\clib3r.lib(alphabet.c)
+0002:0000135c  ___Alphabet
+Module: C:\WATCOM/lib386/os2\clib3r.lib(lmaino32.c)
+0001:00003940  LibMain
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nfree.c)
+0001:00003960  _nfree_
+0001:00003960  free_
+0002:0000273c  ___MiniHeapFreeRover
+Module: C:\WATCOM/lib386/os2\clib3r.lib(mthread.c)
+0001:00003ab0+ __CloseSemaphore_
+0001:00003b20+ __AccessIOB_
+0001:00003b30+ __ReleaseIOB_
+0001:00003b40+ __AccessFileH_
+0001:00003b50+ __ReleaseFileH_
+0001:00003b60+ __AccessNHeap_
+0001:00003b70+ __ReleaseNHeap_
+0001:00003b80+ __AccessFHeap_
+0001:00003b90+ __ReleaseFHeap_
+0001:00003ba0+ __AccessTDList_
+0001:00003bb0+ __AccessSemaphore_
+0001:00003c10+ __ReleaseTDList_
+0001:00003c20+ __ReleaseSemaphore_
+0001:00003c50+ __MultipleThread_
+0001:00003c90  __AllocInitThreadData_
+0001:00003ce0  __FreeInitThreadData_
+0001:00003cf0  __OS2AddThread_
+0001:00003d60  __OS2RemoveThread_
+0001:00003db0  __InitMultipleThread_
+0002:00002040+ ___AccessSema4
+0002:00002044+ ___ReleaseSema4
+0002:00002048+ ___CloseSema4
+Module: C:\WATCOM/lib386/os2\clib3r.lib(ddgrpo32.c)
+0001:00004010  __disallow_single_dgroup_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nmalloc.c)
+0001:00004260+ _use_os2_high_mem_
+0001:00004290* _os2lmalloc_
+0001:000042c0* _os2hmalloc_
+0001:00004300  _nmalloc_
+0001:00004300  malloc_
+0002:0000204c  ___nheapbeg
+0002:00002050  ___MiniHeapRover
+0002:00002054  ___LargestSizeB4MiniHeapRover
+0002:00002b4c  __os2_use_obj_any
+Module: C:\WATCOM/lib386/os2\clib3r.lib(atouni.c)
+0001:00004440  _atouni_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(trdalloc.c)
+0001:00004480  __InitThreadProcessing_
+0001:000044a0  __FiniThreadProcessing_
+0002:00002b50  ___ThreadData
+Module: C:\WATCOM/lib386/os2\clib3r.lib(maxthrds.c)
+0002:00002058  ___MaxThreads
+Module: C:\WATCOM/lib386/os2\clib3r.lib(dosseg)
+0000:00001234  __DOSseg__
+Module: C:\WATCOM/lib386/os2\clib3r.lib(amblksiz.c)
+0002:0000205c  __amblksiz
+Module: C:\WATCOM/lib386/os2\clib3r.lib(dllmno32.c)
+0001:00004500  DllMain
+Module: C:\WATCOM/lib386/os2\clib3r.lib(mem.c)
+0001:00004510  __MemAllocator
+0001:000045c0  __MemFree
+Module: C:\WATCOM/lib386/os2\clib3r.lib(trdlist.c)
+0001:00004750  __GetThreadData_
+0001:00004860  __ReallocThreadData_
+0001:000049d0  __AddThreadData_
+0001:00004a50  __RemoveThreadData_
+0001:00004ab0* __ResizeThreadDataList_
+0001:00004b00  __FreeThreadDataList_
+0001:00004b30* __ActiveThreads_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(mthrdini.c)
+0001:00004b50  __InitThreadData_
+0002:00002064  ___ThreadDataSize
+Module: C:\WATCOM/lib386/os2\clib3r.lib(calloc.c)
+0001:00004b70  calloc_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(register.c)
+0001:00004ba0  __initthread_
+0001:00004bb0* _beginthread_
+0001:00004bc0  _endthread_
+0001:00004bd0* __RegisterThreadData_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nheapmin.c)
+0001:00004c20  _nheapshrink_
+0001:00004c20* _nheapmin_
+0001:00004c20* _heapmin_
+0001:00004c20  _heapshrink_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(grownear.c)
+0001:00004ef0  __ExpandDGROUP_
+0002:00002074  __os2_obj_any_supported
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nmemneed.c)
+0001:00004f10  __nmemneed_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(thrdmax.c)
+0001:00004f20  __GETMAXTHREADS
+Module: C:\WATCOM/lib386/os2\clib3r.lib(libmno32.c)
+0001:00004f30  __dll_initialize_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(libterm.c)
+0001:00004f40  __dll_terminate_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nrealloc.c)
+0001:00004f50* _nrealloc_
+0001:00004f50  realloc_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(thredo32.c)
+0001:000050b0  __CBeginThread_
+0001:00005150  __CEndThread_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(heapen.c)
+0001:00005170* _heapenable_
+0002:00002078  ___heap_enabled
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nmsize.c)
+0001:000051a0  _nmsize_
+0001:000051a0* _msize_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(nexpand.c)
+0001:000051b0  _nexpand_
+0001:000051b0* _expand_
+0001:000051f0+ __HeapManager_expand_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(chk8087.c)
+0001:000053c0  _fpreset_
+0001:000053e0* __init_8087_
+0001:000053f0  __chk8087_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(_8087)
+0002:0000207c  __8087
+0002:0000207d  __real87
+Module: C:\WATCOM/lib386/os2\clib3r.lib(8087cw.c)
+0002:00002080  __8087cw
+Module: C:\WATCOM/lib386/os2\clib3r.lib(init8087)
+0001:00005440  __x87id
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+SOMClassMgrClassData                SOM
+somEndCriticalSection               SOM
+somGetClassFromMToken               SOM
+somBeginPersistentIds               SOM
+somIdMarshal                        SOM
+SOM_IdTable                         SOM
+somCheckArgs                        SOM
+somUniqueKey                        SOM
+somva_SOMObject_somClassDispatch    SOM
+somBuildClass                       SOM
+SOMLoadModule                       SOM
+somRegisterId                       SOM
+somCompareIds                       SOM
+somSetOutChar                       SOM
+SOMParentDerivedMetaclassClassData  SOM
+SOM_WarnLevel                       SOM
+somStartCriticalSection             SOM
+SOM_TraceLevel                      SOM
+somPrefixLevel                      SOM
+somTotalRegIds                      SOM
+somExceptionId                      SOM
+SOMGetThreadId                      SOM
+somAbnormalEnd                      SOM
+somDataResolve                      SOM
+somMainProgram                      SOM
+somRegisterClassLibrary             SOM
+somGetGlobalEnvironment             SOM
+SOM_MaxThreads                      SOM
+somSaveMetrics                      SOM
+va_SOMObject_somDispatch            SOM
+somUnregisterClassLibrary           SOM
+va_SOMObject_somDispatchA           SOM
+va_SOMObject_somDispatchD           SOM
+va_SOMObject_somDispatchL           SOM
+va_SOMObject_somDispatchV           SOM
+SOMDeleteModule                     SOM
+SOM_IdTableSize                     SOM
+somStringFromId                     SOM
+somPCallResolve                     SOM
+somSetException                     SOM
+somExceptionFree                    SOM
+somClassResolve                     SOM
+somResolveByName                    SOM
+somFreeThreadData                   SOM
+somIdFromString                     SOM
+SOM_MajorVersion                    SOM
+SOM_AssertLevel                     SOM
+SOMClassClassData                   SOM
+somWriteMetrics                     SOM
+SOMObjectNewClass                   SOM
+somParentResolve                    SOM
+somSetExpectedIds                   SOM
+SOM_MinorVersion                    SOM
+SOMClassNewClass                    SOM
+somDataResolveChk                   SOM
+somExceptionValue                   SOM
+somfixMsgTemplate                   SOM
+SOMClassMgrObject                   SOM
+somConstructClass                   SOM
+somEnvironmentEnd                   SOM
+somMakeUserRdStub                   SOM
+SOMOutCharRoutine                   SOM
+SOMCreateMutexSem                   SOM
+somEnvironmentNew                   SOM
+SOMObjectClassData                  SOM
+SOMClassCClassData                  SOM
+SOMReleaseMutexSem                  SOM
+SOMFree                             SOM
+somAncestorResolve                  SOM
+somResolveTerminal                  SOM
+somva_SOMObject_somDispatch         SOM
+somIsObj                            SOM
+somTest                             SOM
+somva_SOMObject_somDispatchA        SOM
+SOMRequestMutexSem                  SOM
+somva_SOMObject_somDispatchD        SOM
+somApply                            SOM
+somva_SOMObject_somDispatchL        SOM
+SOMDestroyMutexSem                  SOM
+somva_SOMObject_somDispatchV        SOM
+SOMError                            SOM
+SOMCalloc                           SOM
+SOMMalloc                           SOM
+somAssert                           SOM
+somPrintf                           SOM
+SOMObjectCClassData                 SOM
+somCheckId                          SOM
+SOMRealloc                          SOM
+somLPrintf                          SOM
+somVprintf                          SOM
+somResolve                          SOM
+somEndPersistentIds                 SOM
+SOMClassMgrNewClass                 SOM
+somParentNumResolve                 SOM
+somTestCls                          SOM
+SOMClassInitFuncName                SOM
+SOMClassMgrCClassData               SOM
+somCreateDynamicClass               SOM
+WPDataFileNewClass                  PMWP
+WPObjectClassData                   PMWP
+M_WPDataFileNewClass                PMWP
+M_WPObjectClassData                 PMWP
+M_WPFileSystemClassData             PMWP
+DosBeep                             DOSCALLS
+DosSleep                            DOSCALLS
+DosQuerySysInfo                     DOSCALLS
+WinMessageBox                       PMWIN
+WPFileSystemClassData               PMWP
+DosOpen                             DOSCALLS
+DosWrite                            DOSCALLS
+DosClose                            DOSCALLS
+DosQueryModuleHandle                DOSCALLS
+WinQueryAnchorBlock                 PMWIN
+WinLoadString                       PMWIN
+WinRegisterClass                    PMWIN
+WinCreateWindow                     PMWIN
+WinDestroyWindow                    PMWIN
+WinSendMsg                          PMWIN
+WinWindowFromID                     PMWIN
+WinSetWindowText                    PMWIN
+WinRestoreWindowPos                 PMWP
+WinQueryTaskSizePos                 PMSHAPI
+WinSetWindowPos                     PMWIN
+WinShowWindow                       PMWIN
+WinStartTimer                       PMWIN
+WinQueryWindow                      PMWIN
+WinSetWindowPtr                     PMWIN
+WinSetFocus                         PMWIN
+WinQueryWindowPtr                   PMWIN
+WinQueryWindowRect                  PMWIN
+WinInvalidateRect                   PMWIN
+WinBeginPaint                       PMWIN
+WinFillRect                         PMWIN
+WinDrawPointer                      PMWIN
+WinEndPaint                         PMWIN
+WinStopTimer                        PMWIN
+WinStoreWindowPos                   PMWP
+WinPostMsg                          PMWIN
+WinDefWindowProc                    PMWIN
+WinSendDlgItemMsg                   PMWIN
+WinSetDlgItemText                   PMWIN
+WinDefDlgProc                       PMWIN
+WinAlarm                            PMWIN
+DosUnwindException                  DOSCALLS
+DosExit                             DOSCALLS
+DosGetInfoBlocks                    DOSCALLS
+DosQueryModuleName                  DOSCALLS
+DosCloseMutexSem                    DOSCALLS
+DosReleaseMutexSem                  DOSCALLS
+DosCreateMutexSem                   DOSCALLS
+DosRequestMutexSem                  DOSCALLS
+DosLoadModule                       DOSCALLS
+DosQueryProcAddr                    DOSCALLS
+DosFreeMem                          DOSCALLS
+DosAllocMem                         DOSCALLS
+DosPostEventSem                     DOSCALLS
+DosCreateEventSem                   DOSCALLS
+DosCreateThread                     DOSCALLS
+DosCloseEventSem                    DOSCALLS
+DosWaitEventSem                     DOSCALLS
+DosDevConfig                        DOSCALLS
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+C:\WATCOM/lib386/os2\clib3r.lib
+C:\WATCOM/lib386/os2\os2386.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  0000 (0.)
+Memory size:  7fd3 (32723.)
+Link time: 00:00.53

@@ -1,0 +1,44 @@
+; pmwp.def - import declarations for the Workplace Shell parent classes
+; that our sources and the sc-generated class-construction code reference:
+;   wpobject.idl   dllname = "pmwp.dll";   (WPObject)
+;   wpfsys.idl     dllname = "pmwp.dll";   (WPFileSystem)
+;   wpdataf.idl    dllname = "pmwp.dll";   (WPDataFile)
+;
+; IMPORTANT: pmwp.dll exports nearly everything BY ORDINAL ONLY
+; (unnamed entry slots - verified by dumping the system DLL).
+; An import library built from NAME-based declarations links fine but
+; FAILS AT LOAD TIME: the WPS silently refuses to load the DLL.
+; The ordinals below come from Paul Ratcliffe's published "OS/2 PMWP.DLL
+; Entry Points" table (home.clara.net/orac/os2/pmwp.htm), the same source
+; proven correct by the AddrBook-Watcom port (its share.dll binds and
+; runs against PMWP.14/15/23/26/27/32/315/323/326/327).
+;
+; Car's chain is WPObject <- WPFileSystem <- WPDataFile <- Car.  The
+; generated construction code references the immediate parent's
+; NewClass/ClassData symbols; grandparent entries are kept because the
+; sc-generated parent-dispatch machinery may resolve through them, and
+; an unused import costs nothing at load time (pmwp.dll is always
+; resident inside the WPS anyway).
+;
+; Note the _wp*/_wpcls* methods need NO import entries at all: every
+; method call goes through sc-generated dispatch macros reading the
+; ClassData structures below, so only those structures and the NewClass
+; factories are statically bound.
+;
+; Processed by IMPLIB into release\pmwp.lib (see Makefile.wat).  If
+; wlink reports an unresolved symbol on a future build, look up its
+; ordinal in Ratcliffe's table and add it here.
+
+IMPORTS
+   WPObjectClassData         = PMWP.23
+   WPFileSystemClassData     = PMWP.11
+   WPDataFileClassData       = PMWP.17
+   M_WPObjectClassData       = PMWP.323
+   M_WPFileSystemClassData   = PMWP.311
+   M_WPDataFileClassData     = PMWP.317
+   WPObjectNewClass          = PMWP.24
+   WPFileSystemNewClass      = PMWP.12
+   WPDataFileNewClass        = PMWP.18
+   M_WPObjectNewClass        = PMWP.324
+   M_WPFileSystemNewClass    = PMWP.312
+   M_WPDataFileNewClass      = PMWP.318
