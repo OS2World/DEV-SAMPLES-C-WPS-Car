@@ -5,6 +5,8 @@ with SOM and the OS/2 IDL compiler.  The Car object associates with `*.CAR`
 files, opens an animated view, and exposes horn/beep/speed settings through
 the WPS settings notebook.
 
+![Car ScreenShot](/doc/Car.png)
+
 Copyright (C) 1992, 1993, 1994, 1995 IBM Corporation.
 Ported to Open Watcom 2024.
 
@@ -50,7 +52,6 @@ Car-Watcom/
   doc/
     car.ipf      IPF help source
     car.png      help illustration
-  orig/        pristine IBM sample (VAC/nmake, original idl/c/rc)
   release/     build output: .dll, .hlp, .obj, .res, .map, .lib
   Makefile.wat Open Watcom wmake makefile (primary build)
   Makefile.vac original IBM VAC/nmake makefile (reference only)
@@ -249,23 +250,3 @@ Open Watcom and toolkit 4.5:
 - **Help not found** -- ensure `car.hlp` is in the same directory as
   `car.dll` or on `HELPREFPATH`.
 
-## Files from the Original IBM Sample
-
-The `orig/` directory contains the pristine IBM sample as shipped:
-
-```
-orig/
-  car.c       original C source (2488 lines)
-  car.dll     original pre-built DLL
-  car.hlp     original pre-built help file
-  car.ico     application icon
-  car.idl     original SOM IDL (no dllname)
-  car.ipf     IPF help source
-  car.mak     original IBM nmake makefile
-  car.rc      original resource script
-  cardef.h    original resource ID header
-```
-
-The original `car.dll` imports from 5 modules (DOSCALLS, PMWIN, PMSHAPI,
-PMWP, som).  The Watcom port produces an equivalent DLL with the same
-import surface after the `som.lib` fix described above.
