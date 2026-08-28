@@ -23,12 +23,14 @@
 #      (exactly how the original split work between sc output and hand
 #      code).
 #   4. Parent WPS classes (WPObject/WPFileSystem/WPDataFile) come from
-#      pmwp.dll by ORDINAL: src\pmwp.def + IMPLIB -> release\pmwp.lib.
-#   4a. SOM kernel: implib built from som.dll -> release\som.lib (single-
-#       module import library; avoids somtk.lib's transitive dependency
-#       on somc/some/somtc which fail to load on some systems).
-#   5. Help: the sample ships a pre-built car.hlp; we copy it rather
-#      than rebuild IPF (IPFC is not part of the toolkit's wmake flow).
+#      pmwp.dll by ORDINAL: wlib reads C:\OS2\DLL\pmwp.dll directly ->
+#      release\pmwp.lib.  src\pmwp.def documents the specific ordinals
+#      used but is not fed to wlib (wlib rejects IMPORTS .def files).
+#   4a. SOM kernel: wlib builds release\som.lib from som.dll directly
+#       (single-module import library; avoids somtk.lib's transitive
+#       dependency on somc/some/somtc which fail to load on some systems).
+#   5. Help: wipfc (Open Watcom IPF compiler) compiles doc\car.ipf to
+#      release\car.hlp.  wipfc must be on PATH (part of Open Watcom).
 #****************************************************************************
 
 WATCOM  = $(%WATCOM)
@@ -45,16 +47,20 @@ WPSINC  = C:\os2tk45\h
 # ---------------------------------------------------------------------------
 SOMDLL  = C:\OS2\DLL\som.dll
 SOMLIB  = $(OUT)\som.lib
+PMWPDLL = C:\OS2\DLL\pmwp.dll
 # ---------------------------------------------------------------------------
 
 HDIR    = h
 SRC     = src
 OUT     = release
+IPFSRC  = doc\car.ipf
+CARDEF  = $(SRC)\car.def
 
 CC      = wcc386
 LINK    = wlink
 RC      = wrc
-IMPLIB  = implib
+WLIB    = wlib
+WIPFC   = wipfc
 
 # Calling-convention note: SOMLINK stays EMPTY under Watcom; linkage is
 # guaranteed by #pragma linkage(..., system) in the generated bindings.
@@ -69,11 +75,11 @@ EXPS    = EXP SOMInitModule &
           EXP M_CarClassData EXP M_CarCClassData EXP M_CarNewClass &
           EXP CarClassData EXP CarCClassData EXP CarNewClass
 
-PMWPDEF = $(SRC)\pmwp.def
 PMWPLIB = $(OUT)\pmwp.lib
 
 LFLAGS  = SYSTEM OS2V2_DLL NAME $(OUT)\car.dll &
           OP MAP=$(OUT)\car.map &
+          @$(CARDEF) &
           LIBF $(SOMLIB),$(PMWPLIB) $(EXPS)
 
 all : $(OUT)\car.dll $(OUT)\car.hlp
@@ -93,10 +99,10 @@ $(OUT)\cargen.obj : $(OUT)\cargen.c $(HDIR)\car.ih $(HDIR)\car.h
     $(CC) -bd $(CFLAGS) -wcd=107 -wcd=138 -wcd=202 $(OUT)\cargen.c -fo=$@
 
 $(OUT)\som.lib : $(SOMDLL)
-    $(IMPLIB) $@ $?
+    $(WLIB) -n -b -q $@ +$(SOMDLL)
 
-$(OUT)\pmwp.lib : $(PMWPDEF)
-    $(IMPLIB) $@ $?
+$(OUT)\pmwp.lib : $(PMWPDLL)
+    $(WLIB) -n -b -q $@ +$(PMWPDLL)
 
 # wrc -r always writes <name>.res next to the source; relocate afterwards.
 # car.rc includes src\carres.h (IDs only) - wrc cannot parse car.ih.
@@ -110,8 +116,9 @@ $(OUT)\car.dll : $(DLLOBJ) $(OUT)\car.res $(SOMLIB) $(PMWPLIB)
     $(RC) $(OUT)\car.res $(OUT)\car.dll
 # No MAPSYM step: IBM mapsym rejects Watcom's map format.
 
-$(OUT)\car.hlp : orig\car.hlp
-    copy orig\car.hlp $@
+$(OUT)\car.hlp : $(IPFSRC)
+    $(WIPFC) $(IPFSRC)
+    move car.hlp $@
 
 bindings : .SYMBOLIC
     @echo Run genbind.cmd on the OS/2 side once; this makefile expects

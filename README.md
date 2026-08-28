@@ -5,8 +5,6 @@ with SOM and the OS/2 IDL compiler.  The Car object associates with `*.CAR`
 files, opens an animated view, and exposes horn/beep/speed settings through
 the WPS settings notebook.
 
-![Car ScreenShot](/doc/car.png)
-
 Copyright (C) 1992, 1993, 1994, 1995 IBM Corporation.
 Ported to Open Watcom 2024.
 
@@ -52,6 +50,7 @@ Car-Watcom/
   doc/
     car.ipf      IPF help source
     car.png      help illustration
+  orig/        pristine IBM sample (VAC/nmake, original idl/c/rc)
   release/     build output: .dll, .hlp, .obj, .res, .map, .lib
   Makefile.wat Open Watcom wmake makefile (primary build)
   Makefile.vac original IBM VAC/nmake makefile (reference only)
@@ -64,7 +63,7 @@ Car-Watcom/
 ## Prerequisites
 
 - **ArcaOS** or **OS/2 Warp 3+** with the Workplace Shell.
-- **Open Watcom v2** (wcc386, wlink, wrc, wmake) on the build machine.
+- **Open Watcom v2** (wcc386, wlink, wrc, wlib, wmake, wipfc) on the build machine.
   `WATCOM` environment variable must be set.
 - **SOM toolkit** headers at `C:\os2tk45\som\include` (adjust `SOMINC`
   in the Makefile for your layout).
@@ -104,7 +103,7 @@ all output to `release\wmake.log`.
 
 5. **Resources** -- `wrc` compiles `src\car.rc` and binds it into the DLL.
 
-6. **Help** -- the pre-built `orig\car.hlp` is copied to `release\`.
+6. **Help** -- `wipfc` compiles `doc\car.ipf` to `release\car.hlp`.
 
 ## Registration
 
@@ -174,12 +173,12 @@ Open Watcom and toolkit 4.5:
 - **SOM import library built from `som.dll`**, not from a `.def` file.
   IBM's `implib` silently drops entries when processing `.def` IMPORTS
   sections containing SOM-family symbols, producing a 1024-byte stub that
-  resolves nothing.  Building directly from the DLL's export table gives a
-  correct single-module import library.  This eliminates the 13 phantom
-  imports (`somc`, `some`, `soms`, `somem`, `somct`, `somsec`, `somd`,
-  `somir`, `somtc`, `somp`, `somr`, `somu`, `somuc`) that `somtk.lib`
-  drags in transitively and that are absent from minimal OS/2
-  installations.
+  resolves nothing.  `wlib -n -b -q som.lib +som.dll` reads the DLL's
+  export table directly, giving a correct single-module import library.
+  This eliminates the 13 phantom imports (`somc`, `some`, `soms`, `somem`,
+  `somct`, `somsec`, `somd`, `somir`, `somtc`, `somp`, `somr`, `somu`,
+  `somuc`) that `somtk.lib` drags in transitively and that are absent from
+  minimal OS/2 installations.
 - **`somtk.lib` no longer used.**  The stock SOM toolkit import library
   resolves SOM symbols but also pulls in every SOM-family DLL as a
   transitive dependency.  The error "Registering class 'Car' failed.
@@ -248,5 +247,28 @@ Open Watcom and toolkit 4.5:
   `mk.cmd`).  Individual `.err` files in the project root contain
   compiler diagnostics.
 - **Help not found** -- ensure `car.hlp` is in the same directory as
-  `car.dll` or on `HELPREFPATH`.
+  `car.dll` or on `HELPREFPATH`.  If missing, run `mk` to rebuild (wipfc
+  must be on PATH).
+- **`wipfc` not found** -- wipfc is part of Open Watcom (`binp\wipfc.exe`
+  or `binw\wipfc.exe`).  Ensure the Watcom `binp` directory is on PATH.
 
+## Files from the Original IBM Sample
+
+The `orig/` directory contains the pristine IBM sample as shipped:
+
+```
+orig/
+  car.c       original C source (2488 lines)
+  car.dll     original pre-built DLL
+  car.hlp     original pre-built help file
+  car.ico     application icon
+  car.idl     original SOM IDL (no dllname)
+  car.ipf     IPF help source
+  car.mak     original IBM nmake makefile
+  car.rc      original resource script
+  cardef.h    original resource ID header
+```
+
+The original `car.dll` imports from 5 modules (DOSCALLS, PMWIN, PMSHAPI,
+PMWP, som).  The Watcom port produces an equivalent DLL with the same
+import surface after the `som.lib` fix described above.
