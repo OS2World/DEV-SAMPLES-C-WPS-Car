@@ -45,7 +45,7 @@ Car-Watcom/
     carres.h     resource ID constants (wrc-compatible)
     car.ico      application icon
     cgenpre.h    OS/2 prelude prepended to sc-generated car.c
-    pmwp.def     ordinal imports for WPObject/WPFileSystem/WPDataFile
+    pmwp.def     ordinal reference for WPObject/WPFileSystem/WPDataFile (not used by build)
     som.def      (retained; no longer used by the build)
   doc/
     car.ipf      IPF help source
@@ -68,7 +68,8 @@ Car-Watcom/
 - **SOM toolkit** headers at `C:\os2tk45\som\include` (adjust `SOMINC`
   in the Makefile for your layout).
 - **WPS/PM headers** at `C:\os2tk45\h` (adjust `WPSINC`).
-- **som.dll** at `C:\OS2\DLL\som.dll` (standard on ArcaOS/OS/2).
+- **som.dll** and **pmwp.dll** at `C:\OS2\DLL\` (standard on ArcaOS/OS/2);
+  both are read by `wlib` at build time to produce the import libraries.
 
 ## Building
 
@@ -93,10 +94,13 @@ all output to `release\wmake.log`.
    prepended with `src\cgenpre.h` for OS/2 types) as DLL objects
    (`-bd`).
 
-3. **Import libraries** -- `implib` builds:
+3. **Import libraries** -- `wlib -n -b -q` builds both from the live DLLs:
    - `release\som.lib` from `C:\OS2\DLL\som.dll` (single-module SOM
      import library).
-   - `release\pmwp.lib` from `src\pmwp.def` (ordinal-only PMWP imports).
+   - `release\pmwp.lib` from `C:\OS2\DLL\pmwp.dll` (WPS parent classes).
+   `src\pmwp.def` documents the specific ordinals used but is not fed to
+   wlib (wlib rejects `.def` IMPORTS files; it reads DLL export tables
+   directly).
 
 4. **Link** -- `wlink` produces `release\car.dll` with seven exports
    (SOMInitModule plus the six class symbols).
@@ -192,10 +196,11 @@ Open Watcom and toolkit 4.5:
 
 ### Import Definitions
 
-- **`src/pmwp.def`** -- 12 ordinal imports for WPObject, WPFileSystem,
-  and WPDataFile (ClassData, CClassData, NewClass, and metaclass
-  counterparts).  Ordinals from Paul Ratcliffe's published PMWP entry
-  point table.
+- **`src/pmwp.def`** -- ordinal reference document for WPObject,
+  WPFileSystem, and WPDataFile (ClassData, CClassData, NewClass, and
+  metaclass counterparts).  Ordinals from Paul Ratcliffe's published PMWP
+  entry point table.  No longer fed to the build: `wlib` reads
+  `C:\OS2\DLL\pmwp.dll` directly (wlib rejects `.def` IMPORTS files).
 - **`src/som.def`** -- retained for reference but no longer used by the
   build.
 
@@ -221,7 +226,8 @@ Open Watcom and toolkit 4.5:
 | `DebugBox` | IDL passthru macro | helper function in `src\car.c` |
 | `#pragma handler` | active | commented out (no OW equivalent) |
 | `zString` typedef | present | replaced with `string` |
-| Import library | `somtk.lib` (full) | `som.lib` from `som.dll` (minimal) |
+| Import library tool | IBM `implib` | Open Watcom `wlib` |
+| Import library | `somtk.lib` (full) | `som.lib` + `pmwp.lib` from live DLLs via `wlib` |
 | WPS registration | `ibmsamp.inc` helper | `register.cmd` / REXX |
 
 ## Running
@@ -241,8 +247,8 @@ Open Watcom and toolkit 4.5:
   `C:\OS2\DLL\som.dll`) and that `Makefile.wat` line 77 reads
   `LIBF $(SOMLIB),$(PMWPLIB)`.
 - **`wlink: E3033 directive error near ...`** -- a `.lnk` response file
-  contains `IMPORT` directives.  `IMPORT` is an `implib` directive, not
-  `wlink`.  Remove any `@release\car.lnk` reference from LFLAGS.
+  contains `IMPORT` directives.  `IMPORT` is not a wlink directive.
+  Remove any `@release\car.lnk` reference from LFLAGS.
 - **Build output unreadable** -- check `release\wmake.log` (captured by
   `mk.cmd`).  Individual `.err` files in the project root contain
   compiler diagnostics.
