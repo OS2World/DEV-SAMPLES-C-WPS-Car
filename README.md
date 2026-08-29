@@ -5,6 +5,8 @@ with SOM and the OS/2 IDL compiler.  The Car object associates with `*.CAR`
 files, opens an animated view, and exposes horn/beep/speed settings through
 the WPS settings notebook.
 
+![Car ScreenShot](/doc/car.png)
+
 Copyright (C) 1992, 1993, 1994, 1995 IBM Corporation.
 Ported to Open Watcom 2024.
 
