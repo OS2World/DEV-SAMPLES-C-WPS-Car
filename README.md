@@ -7,6 +7,8 @@ the WPS settings notebook.
 
 ![Car ScreenShot](/doc/car.png)
 
+This sample was originally provided by IBM on the OS/2 Toolkit 4.
+
 Copyright (C) 1992, 1993, 1994, 1995 IBM Corporation.
 Ported to Open Watcom 2024.
 
